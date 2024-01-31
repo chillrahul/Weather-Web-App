@@ -16,16 +16,17 @@ const fetchData = async () => {
   // Destructuring
   const {
     current: { temp_c },
-    location: { name },
+    location: { name, localtime },
   } = data;
 
   updateDOM(temp_c, name);
   //updateDOM(data.current.temp_c, data.location.name);
 };
 
-function updateDOM(temperature, city) {
+function updateDOM(temperature, city, emoji, text, time) {
   temperatureFeild.innerText = temperature;
   cityFeild.innerText = city;
+  console.log(time);
   emojiFeild.src = emoji;
   weatherFeild.innerText = text;
 }
